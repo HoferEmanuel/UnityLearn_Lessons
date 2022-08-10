@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    Transform player;
+    [SerializeField] Transform player;
+    [SerializeField] Vector3 camOffset = new Vector3(0, 1, 1);
 
-    private void Update() => transform.position = player.position;
+    private void LateUpdate() => transform.position = player.position + camOffset;
 }
